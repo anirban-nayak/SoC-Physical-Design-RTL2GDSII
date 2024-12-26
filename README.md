@@ -10,8 +10,8 @@ Imagine you want to achieve a certain functionality (e.g.a video game). You desc
 
 Now, a key aspect to understanding this project is being aware of the VLSI Design Flow.
 
-<img src="https://bhive-design.com/wp-content/uploads/2023/03/Physical-Design-1536x1457.png" alt="Alt Text" width="600" height="300">
+<img src="https://bhive-design.com/wp-content/uploads/2023/03/Physical-Design-1536x1457.png" alt="Alt Text" width="1000" height="500">
 
 All of the processes depicted in the flowchart above have industry standard tools that come with expensive licences. In this project, we will limit our exploration to Physical Design only using open-source tools. The schematic below highlights how OpenLANE - an open-source digital design flow for ASIC development, can be used to go from RTL to GDSII. 
 
-<img src="https://www.zerotoasiccourse.com/openlane-flow.png" alt="Alt Text" width="600" height="300">
+<img src="https://www.zerotoasiccourse.com/openlane-flow.png" alt="Alt Text" width="1000" height="500">

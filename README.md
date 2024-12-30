@@ -120,3 +120,4 @@ The floorplan has the io pins, de-coupling capacitors, tap cells etc. arranged b
 
 ![Screenshot 2024-12-29 022928](https://github.com/user-attachments/assets/335d442a-818d-43db-8b6e-ef5f05573673)
 
+### 3. Placement

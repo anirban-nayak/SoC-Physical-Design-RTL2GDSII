@@ -103,7 +103,7 @@ Furthering our exploration, let us head into *results/floorplan/* of the latest 
 
 The coordinates of the lower left corner of our die and upper right corner of our die are provided as (0,0) and (660685,671405). These values are in database units. The unit distance in database units is defined above as 1000 database units equal 1 micron. Therefore the actual floorplanning has been done on a die area whose corresponding coordinates are given by 0.0 0.0 660.685 671.405 (microns).
 
-We will now have a look at the generated floorplan using Magic (the open-source EDA layout tool). So in the *~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/<latest_run>/results/floorplan/* directory go ahead and type the following command *magic -T /home/<username>/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &* . This will open the design exchange file in magic. You will have two open windows - a layout window and a tkcon window.
+We will now have a look at the generated floorplan using Magic (the open-source EDA layout tool). So in the *~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/<latest_run>/results/floorplan/* directory go ahead and type the following command *magic -T /home/username/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &* . This will open the design exchange file in magic. You will have two open windows - a layout window and a tkcon window.
 
 ![Screenshot 2024-12-29 020653](https://github.com/user-attachments/assets/e30582ec-5c1d-4ea4-8b60-d9c89ef5f32a)
 

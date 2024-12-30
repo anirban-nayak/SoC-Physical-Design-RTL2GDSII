@@ -69,7 +69,7 @@ $$
 
 Similarly learning about de-coupling capacitors and noise margin is recommended at this point.
 
-In floorplanning, the IPs that have user-defined locations are arranged on the chip before automated placement and routing is carried out. So these are also called pre-placed cells. Before we move into the practical end of things, please also look into Power-Planning, the need for Power-Meshes. Build a familiarity with terms like Ground Bounce, Voltage Drop and Logical Cell Placement Blockage during Pin Placement.
+In floorplanning, the IPs that have user-defined locations are arranged on the chip before automated placement and routing is carried out. So these are also called pre-placed cells. Before we move into the practical end of things, please also look into Power-Planning, the need for Power-Meshes. Build a familiarity with terms like Ground Bounce, Voltage Drop and Logical Cell Placement Blockage during Pin Placement. Ideally Power Distribution Network (PDN) Generation should happen during the floorplanning stage. But we shall be taking it up later in the flow.
 
 On your terminal, head over to *~/Desktop/work/tools/openlane_working_dir/openlane/configuration/* and open the *README* file:-
 
@@ -121,3 +121,17 @@ The floorplan has the io pins, de-coupling capacitors, tap cells etc. arranged b
 ![Screenshot 2024-12-29 022928](https://github.com/user-attachments/assets/335d442a-818d-43db-8b6e-ef5f05573673)
 
 ### 3. Placement
+We will be focusing on reducing congestion right now and not on timing aspects of the design. Placement happens in two steps - first the global placement followed by the detailed placement. Global Placement is a rough or approximate placement of standard cells that doesn't necessarily abide by legalization rules. The main objective here is to reduce the wire length also called *Half Parameter Wire Length (HPWL)*. We need the *Overflow (OVFL)* here to converge. In Detailed Placement, legality checks are enforced till success with the standard cells being placed in fixed standard cell rows ensuring there is no overlap.
+
+We will begin the process by executing *run_placement* in the interactive terminal.
+
+![Screenshot 2024-12-30 205558](https://github.com/user-attachments/assets/9c31d05e-4c7e-4f79-929b-3013ae3bc5b8)
+![Screenshot 2024-12-30 210056](https://github.com/user-attachments/assets/f9c66920-800b-49e4-90c7-8fb784741500)
+![Screenshot 2024-12-30 210128](https://github.com/user-attachments/assets/21517e83-2514-4f90-978f-134f269f3847)
+
+After the run successfully concludes, head over to magic and get a glimpse of the updated layout. You want to follow the instructions exactly as shown in the image below:-
+
+![Screenshot 2024-12-30 210153](https://github.com/user-attachments/assets/63d1e28c-55d2-404b-8870-235471c5d38b)
+
+
+

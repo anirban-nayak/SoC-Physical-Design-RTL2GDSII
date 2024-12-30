@@ -121,6 +121,8 @@ The floorplan has the io pins, de-coupling capacitors, tap cells etc. arranged b
 ![Screenshot 2024-12-29 022928](https://github.com/user-attachments/assets/335d442a-818d-43db-8b6e-ef5f05573673)
 
 ### 3. Placement
+When I say netlist, I assume you're imagining all these different logic-gates linked with each other as per your design specifications. In this imagination of yours, an OR gate probably looks like a guitar pick and a not gate like a nacho. I hate to break it to you but, in the physical world, these logic gates actually look quite different with well defined shapes and sizes that are well documented in standard cell libraries. In placement, we will be placing these standard cells onto the bulk of the core.  
+
 We will be focusing on reducing congestion right now and not on timing aspects of the design. Placement happens in two steps - first the global placement followed by the detailed placement. Global Placement is a rough or approximate placement of standard cells that doesn't necessarily abide by legalization rules. The main objective here is to reduce the wire length also called *Half Parameter Wire Length (HPWL)*. We need the *Overflow (OVFL)* here to converge. In Detailed Placement, legality checks are enforced till success with the standard cells being placed in fixed standard cell rows ensuring there is no overlap.
 
 We will begin the process by executing *run_placement* in the interactive terminal.
@@ -133,5 +135,11 @@ After the run successfully concludes, head over to magic and get a glimpse of th
 
 ![Screenshot 2024-12-30 210153](https://github.com/user-attachments/assets/63d1e28c-55d2-404b-8870-235471c5d38b)
 
+The updated layout is shown below:-
 
+![Screenshot 2024-12-30 210229](https://github.com/user-attachments/assets/7d1d01b7-2917-4f45-8116-287c51f79575)
+
+On zooming in you will be able to look at all the logic constructed and laid out using standard cells in fixed rows:-
+
+![Screenshot 2024-12-30 210414](https://github.com/user-attachments/assets/e772a076-39c8-4593-b904-de8766d61061)
 

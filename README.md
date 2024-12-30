@@ -55,4 +55,51 @@ This implies the % of D FFs in this design is 10.84%. This number is on the lowe
 Feel free to go ahead and look into the STA reports that have been generated as well. You can access the synthesized gate-level netlist in the *results* folder of the time-stamped directory.
 
 ### 2. Floorplanning
+Any Physical Design Engineer should be familiar with some very basic terms encountered during this stage:-
+
+$$
+\text{Utilization Factor} = \frac{\text{Area Occupied by a Netlist}}{\text{Total Area of the Core}}
+$$
+
+Core here refers to the area on the die available for placing logic.
+
+$$
+\text{Aspect Ratio} = \frac{\text{Height of core}}{\text{Width of Core}}
+$$
+
+Similarly learning about de-coupling capacitors and noise margin is recommended at this point.
+
+In floorplanning, the IPs that have user-defined locations are arranged on the chip before automated placement and routing is carried out. So these are also called pre-placed cells. Before we move into the practical end of things, please also look into Power-Planning, the need for Power-Meshes. Build a familiarity with terms like Ground Bounce, Voltage Drop and Logical Cell Placement Blockage during Pin Placement.
+
+On your terminal, head over to *~/Desktop/work/tools/openlane_working_dir/openlane/configuration/* and open the *README* file:-
+
+![Screenshot 2024-12-29 003415](https://github.com/user-attachments/assets/8fea1b35-2d27-4039-94aa-6303753b0c8f)
+![Screenshot 2024-12-29 003452](https://github.com/user-attachments/assets/4ddb7b70-10e2-4339-88c2-7c1ccf3e4399)
+
+The values of all these switches can be set in the tcl files available in the configuration folder. For example, the utilization factor has been set to 50 here as a system default. This is a generic setting and can be overridden by a more specific direction. Now head over to *~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/* and open the *config.tcl* file there. You will find a more specific setting for the utilization factor there of 35. This takes precedence as we will see later. Note that if there is a more specific config specification in *sky130A_sky130_fd_sc_hd_config.tcl* file, then that will take precedence as per the heirarchy.
+
+![Screenshot 2024-12-29 003846](https://github.com/user-attachments/assets/90621619-7651-4e21-b171-d2d3627eefb7)
+
+Let us now go and use the floorplanning provisions of OpenROAD. In the interactive mode tab of your terminal, execute the *run_floorplan* command:-
+
+![Screenshot 2024-12-29 004121](https://github.com/user-attachments/assets/b11cbcb0-4129-447e-83dd-d8a2639d47dd)
+![Screenshot 2024-12-29 004415](https://github.com/user-attachments/assets/6f444503-9ea9-41a7-a61b-e790be667173)
+
+After successfully running the floorplan, we can explore the results at *~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/*. Open up the latest run.
+
+![Screenshot 2024-12-29 010457](https://github.com/user-attachments/assets/28b64b09-e6b2-439f-bda0-d1d3715dc3f8)
+
+In this directory, you want to head over to *logs/floorplan/* and open your *ioplacer.log* :-
+
+![Screenshot 2024-12-29 005303](https://github.com/user-attachments/assets/765e2098-bb75-4dd6-a0a2-d220d0038faf)
+
+Some relevant details like core area, die area, no. of layers etc. can be found here among other things. Now in the latest run directory, you can open up the *config.tcl* file and as predicted earlier the utlization factor of 35 has prevailed.
+
+![Screenshot 2024-12-29 010214](https://github.com/user-attachments/assets/15b9b68e-d34e-4971-9eb7-4470ac322397)
+
+Furthering our exploration, let us head into *results/floorplan/* of the latest run directory and open up the *picorv32a.floorplan.def* file.
+
+![Screenshot 2024-12-29 010623](https://github.com/user-attachments/assets/c7c3138c-988e-4b08-9163-86e1b0072aef)
+
+The coordinates of the lower left corner of our die and upper right corner of our die are provided as (0,0) and (660685,671405). These values are in database units. The unit distance in database units is defined above as 1000 database units equal 1 micron. Therefore the actual floorplanning has been done on a die area whose corresponding coordinates are given by 0.0 0.0 660.685 671.405 (microns).
 

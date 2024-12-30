@@ -103,3 +103,20 @@ Furthering our exploration, let us head into *results/floorplan/* of the latest 
 
 The coordinates of the lower left corner of our die and upper right corner of our die are provided as (0,0) and (660685,671405). These values are in database units. The unit distance in database units is defined above as 1000 database units equal 1 micron. Therefore the actual floorplanning has been done on a die area whose corresponding coordinates are given by 0.0 0.0 660.685 671.405 (microns).
 
+We will now have a look at the generated floorplan using Magic (the open-source EDA layout tool). So in the *~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/<latest_run>/results/floorplan/* directory go ahead and type the following command *magic -T /home/<username>/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &* . This will open the design exchange file in magic. You will have two open windows - a layout window and a tkcon window.
+
+![Screenshot 2024-12-29 020653](https://github.com/user-attachments/assets/e30582ec-5c1d-4ea4-8b60-d9c89ef5f32a)
+
+You can use the S key to select your layout and the V key to center it on the screen. In order to zoom in on a specific area in your layout, a left mouse click on the bottom left followed by a right mouse click on the top right will create a window which you can zoom into by pressing the Z key.
+
+![Screenshot 2024-12-29 020842](https://github.com/user-attachments/assets/071eba41-96a5-426a-96f8-cb8ff4693174)
+
+The blue pins along the edges are the io pins of the design. Hover over one and use the S key to select it. Head over to the tkcon window and type *what* to learn more about the component you've selected.
+
+![Screenshot 2024-12-29 022040](https://github.com/user-attachments/assets/edde283c-8802-428c-96e6-98e23f004f38)
+![Screenshot 2024-12-29 022447](https://github.com/user-attachments/assets/e0104e85-b3e3-4502-b45d-64d89a738602)
+
+The floorplan has the io pins, de-coupling capacitors, tap cells etc. arranged but it does not have the standard cells placed yet. You will find them clumped together in the bottom left corner of your layout as shown below.
+
+![Screenshot 2024-12-29 022928](https://github.com/user-attachments/assets/335d442a-818d-43db-8b6e-ef5f05573673)
+

@@ -143,3 +143,5 @@ On zooming in you will be able to look at all the logic constructed and laid out
 
 ![Screenshot 2024-12-30 210414](https://github.com/user-attachments/assets/e772a076-39c8-4593-b904-de8766d61061)
 
+Before we move to further steps in the flow such as Routing or CTS, I would like to cover a couple of things related to standard cell design. Every standard cell, even something as simple as an inverter, has to pass through a cell design flow as shown below:-
+

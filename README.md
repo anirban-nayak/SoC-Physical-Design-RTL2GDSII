@@ -188,4 +188,27 @@ I'd like to mention that the 2D schematic shown below is actually a multi-layere
 You can see a colour-texture palette on the right. Hovering over the icons on this palette, you'll be shown the functionality on the top bar e.g. local interconnects, metal contacts, metal layers etc.
 On the layout window, you can select different elements and check what they are by typing *what* in the console window.
 
-Now on the top bar you can see a DRC checkbox. Whenever there is a Design Rule Violation, this box would be red with the number of violations indicated. On your layout window, a violation is shown using an area filled with white dotted lines. 
+Now on the top bar you can see a DRC checkbox. Whenever there is a Design Rule Violation, this box would be red with the number of violations indicated. On your layout window, a violation is shown using an area filled with white dotted lines. There is also a DRC tab to assist you in fixing these violations. You can use the middle mouse button to apply something from the palette on the selected area.
+
+Now to explore the logical functioning of inverter, we will extract spice netlist and do simulations using it on ngspice tool.
+
+First, on your console window, follow the steps shown below:-
+
+![Screenshot 2025-01-04 011739](https://github.com/user-attachments/assets/f06cdab1-a84d-4444-b9a4-4d79f9f92640)
+
+These files will now be available in the directory shown here:-
+
+![Screenshot 2025-01-04 013415](https://github.com/user-attachments/assets/441ffa4b-7481-4e55-8f86-0022043f9db2)
+
+The vim command will open the netlist file where you will see this:-
+
+![Screenshot 2025-01-04 014121](https://github.com/user-attachments/assets/8ee04955-13c1-4c68-846c-d7d202dc34ef)
+
+We will alter the specifications as follows to meet our requirements:-
+
+![Screenshot 2025-01-04 015830](https://github.com/user-attachments/assets/6f8fd4f3-92b2-4421-9ebd-ea516136fe41)
+
+We have changed the technology scale to match 0.01 microns, included relevant pmos and nmos libraries, created supply and ground voltage provisions, specified pulse and given the details for transient analysis. You can make these changes by pressing *i* to enter insert mode and then save and quit by pressing *esc* followed by *:wq!*.
+
+
+

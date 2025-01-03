@@ -158,3 +158,34 @@ In this flow the characterization step can be further broken down into:-
   8. Providing necessary simulation commands
 
 Once all this is done, GUNa software gives us a model with the timing, noise and power characterizations. 
+
+I would recommend learning the meanings of the following threshold parameters relevant to timing characterization. This will be helpful in a small exercise we will do further down:-
+
+![Screenshot 2025-01-03 174328](https://github.com/user-attachments/assets/c8f6f214-32af-4d85-becd-15c4927bb938)
+
+Also *Propagation Delay = time(out_*_thr) - time(in_*_thr)*. When we get a negative delay, it is a cause for concern. This mainly happens due to improper threshold selection or improper circuit design.
+
+In our exploration of the standard inverter cell, we will not be building one from scratch. Rather we will clone a custom inverter standard cell design from the following github repository: [Standard cell design and characterization using openlane flow](https://github.com/nickson-jose/vsdstdcelldesign.git)
+
+We will perform post-layout simulation of this inverter on ngspice and plug this cell into our picoRV32 core post characterization. A working knowledge of Voltage-Transfer Characteristics (VTC), switching thresholds etc. is recommended for this section.
+
+In order to clone the repo above, click on code and copy the https link. In a fresh terminal, open *~/Desktop/work/tools/openlane_working_dir/openlane* directory and type *git clone (paste the copied link here)* as shown below:-
+
+![Screenshot 2025-01-03 205609](https://github.com/user-attachments/assets/7da56d46-b94f-47e2-a489-10d040769e28)
+
+After running the command when you check the directory a *vsdstdcelldesign* folder would have been created with a *sky130_inv.mag* file present. Before we open this file we will need to copy a technology file. You can do so as shown below:-
+
+![Screenshot 2025-01-03 230203](https://github.com/user-attachments/assets/625cbdc1-cbbc-45ba-a6ad-0b14f56853ed)
+
+As you can see below, the tech file is now in our required directory and we open this file in magic using the command shown below:-
+
+![Screenshot 2025-01-03 230358](https://github.com/user-attachments/assets/bd13f213-97b1-4f55-9a61-e95bb67b7de8)
+
+I'd like to mention that the 2D schematic shown below is actually a multi-layered 3D structure constructed using a 16 - mask CMOS process. Feel free to look into it for a better understanding of all the layers we will be working with in magic.
+
+![Screenshot 2025-01-03 230649](https://github.com/user-attachments/assets/8511b9e4-2f1a-4ea5-a32e-4df0ccd6d1f6)
+
+You can see a colour-texture palette on the right. Hovering over the icons on this palette, you'll be shown the functionality on the top bar e.g. local interconnects, metal contacts, metal layers etc.
+On the layout window, you can select different elements and check what they are by typing *what* in the console window.
+
+Now on the top bar you can see a DRC checkbox. Whenever there is a Design Rule Violation, this box would be red with the number of violations indicated. On your layout window, a violation is shown using an area filled with white dotted lines. 

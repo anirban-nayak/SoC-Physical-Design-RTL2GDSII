@@ -137,11 +137,7 @@ After the run successfully concludes, head over to magic and get a glimpse of th
 
 The updated layout is shown below:-
 
-![Screenshot 2024-12-30 210229](https://github.com/user-attachments/assets/7d1d01b7-2917-4f45-8116-287c51f79575)
-
-On zooming in you will be able to look at all the logic constructed and laid out using standard cells in fixed rows:-
-
-![Screenshot 2024-12-30 210414](https://github.com/user-attachments/assets/e772a076-39c8-4593-b904-de8766d61061)
+![Screenshot 2025-01-03 171012](https://github.com/user-attachments/assets/58a52d5d-ddc8-4de1-90d7-464f37c18168)
 
 Before we move to further steps in the flow such as Routing or CTS, I would like to cover a couple of things related to standard cell design. Every standard cell, even something as simple as an inverter, has to pass through a cell design flow as shown below:-
 

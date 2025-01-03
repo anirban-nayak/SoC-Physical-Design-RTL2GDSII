@@ -232,5 +232,8 @@ From the graphs shown above, the required coordinates were determined in order:-
 
 ![Screenshot 2025-01-04 033225](https://github.com/user-attachments/assets/7d372f84-ee05-4bf9-be32-9ae82068e73e)
 
-
+*Rise Transition Time = 2.24624ns - 2.18214ns = 0.0641ns = 64.1ps*
+*Fall Transition Time = 4.09522ns - 4.05235ns = 0.04287ns = 42.87ps*
+*Rise Cell Delay = 2.21109ns - 2.14989ns = 0.0612ns = 61.2ps*
+*Fall Cell Delay = 4.07771ns - 4.05ns = 0.02771ns = 27.71ps*
 

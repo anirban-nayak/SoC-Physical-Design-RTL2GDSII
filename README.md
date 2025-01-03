@@ -206,9 +206,12 @@ The vim command will open the netlist file where you will see this:-
 
 We will alter the specifications as follows to meet our requirements:-
 
-![Screenshot 2025-01-04 015830](https://github.com/user-attachments/assets/6f8fd4f3-92b2-4421-9ebd-ea516136fe41)
+![Screenshot 2025-01-04 025504](https://github.com/user-attachments/assets/7bc60616-b3db-40f1-b360-e0ecd5dc26de)
 
-We have changed the technology scale to match 0.01 microns, included relevant pmos and nmos libraries, created supply and ground voltage provisions, specified pulse and given the details for transient analysis. You can make these changes by pressing *i* to enter insert mode and then save and quit by pressing *esc* followed by *:wq!*.
+We have changed the technology scale to match 0.01 microns, included relevant pmos and nmos libraries, created supply and ground voltage provisions, specified pulse and given the details for transient analysis. You can make these changes by pressing *i* to enter insert mode and then save and quit by pressing *esc* followed by *:wq!*. Following this, on the terminal, simulate the netlist on ngspice as shown. If ngspice is not installed already, you would have to install it using *sudo apt install ngspice*.
+
+![Screenshot 2025-01-04 025401](https://github.com/user-attachments/assets/deb67603-eacf-46fe-b314-d5d7c16a93c6)
+
 
 
 

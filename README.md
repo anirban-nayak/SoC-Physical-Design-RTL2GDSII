@@ -131,7 +131,7 @@ We will begin the process by executing *run_placement* in the interactive termin
 ![Screenshot 2024-12-30 210056](https://github.com/user-attachments/assets/f9c66920-800b-49e4-90c7-8fb784741500)
 ![Screenshot 2024-12-30 210128](https://github.com/user-attachments/assets/21517e83-2514-4f90-978f-134f269f3847)
 
-After the run successfully concludes, head over to magic and get a glimpse of the updated layout. You want to follow the instructions exactly as shown in the image below:-
+After the run successfully concludes, head over to magic and get a glimpse of the updated layout. You want to follow the instructions as shown in the image below:-
 
 ![Screenshot 2024-12-30 210153](https://github.com/user-attachments/assets/63d1e28c-55d2-404b-8870-235471c5d38b)
 
@@ -139,5 +139,22 @@ The updated layout is shown below:-
 
 ![Screenshot 2025-01-03 171012](https://github.com/user-attachments/assets/58a52d5d-ddc8-4de1-90d7-464f37c18168)
 
+You can zoom into the design and see how the standard cells have been placed in the standard cell rows.
+
+![Screenshot 2025-01-03 172604](https://github.com/user-attachments/assets/34c635d8-b47a-45b9-86fc-c78ee00354dc)
+
 Before we move to further steps in the flow such as Routing or CTS, I would like to cover a couple of things related to standard cell design. Every standard cell, even something as simple as an inverter, has to pass through a cell design flow as shown below:-
 
+![Screenshot 2024-12-31 183728](https://github.com/user-attachments/assets/27f1cc83-5d2f-438c-a130-63e0a175bc3f)
+
+In this flow the characterization step can be further broken down into:-
+  1. Reading the model file
+  2. Reading the extracted spice netlist
+  3. Recognizing the behaviour of buffer
+  4. Reading the sub-circuit of the inverter
+  5. Reading in the necessary power supply
+  6. Applying the stimulus
+  7. Providing necessary output load capacitances which need to be varied
+  8. Providing necessary simulation commands
+
+Once all this is done, GUNa software gives us a model with the timing, noise and power characterizations. 

@@ -212,6 +212,25 @@ We have changed the technology scale to match 0.01 microns, included relevant pm
 
 ![Screenshot 2025-01-04 025401](https://github.com/user-attachments/assets/deb67603-eacf-46fe-b314-d5d7c16a93c6)
 
+In the ngspice prompt window, enter *plot y vs time a*. A transient analysis of the pulse appears as shown below:-
+
+![Screenshot 2025-01-04 030125](https://github.com/user-attachments/assets/eb5f8adf-27b1-42aa-bd45-be2c2ef41904)
+
+It is now finally time to characterize the cell. In order to characterize a standard cell we need to calculate 4 parameters:-
+  1. Rise Transition - Time taken by output waveform to go from 20% to 80%
+  2. Fall Transition - Time taken by output waveform to go from 80% to 20%
+  3. Rise Cell Delay - Time taken by output to reach 50% of high voltage after rising input crosses 50%
+  4. Fall Cell Delay - Time taken by output to reach 50% of low voltage after falling input crosses 50%
+
+![Screenshot 2025-01-04 031344](https://github.com/user-attachments/assets/42e055c5-1c49-4d82-b3e8-a3167ee2cf37)
+![Screenshot 2025-01-04 031545](https://github.com/user-attachments/assets/909f413e-c967-404d-9a17-d42e7d830930)
+![Screenshot 2025-01-04 032141](https://github.com/user-attachments/assets/5b1d604d-acc5-4bb7-af1c-6a071da56234)
+![Screenshot 2025-01-04 032351](https://github.com/user-attachments/assets/f23b7d92-5f60-493a-b3f2-87ab18c76b19)
+![Screenshot 2025-01-04 032503](https://github.com/user-attachments/assets/729574f4-6238-437a-924b-2d08bc8f6093)
+
+From the graphs shown above, the required coordinates were determined in order:-
+
+![Screenshot 2025-01-04 033225](https://github.com/user-attachments/assets/7d372f84-ee05-4bf9-be32-9ae82068e73e)
 
 
 

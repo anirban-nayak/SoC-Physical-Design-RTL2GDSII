@@ -240,3 +240,38 @@ From the graphs shown above, the required coordinates were determined in order:-
 
 *Fall Cell Delay = 4.07771ns - 4.05ns = 0.02771ns = 27.71ps*
 
+With the characterization of our inverter now complete, we will go ahead and create a LEF file for it. But before that we'll take a small detour and explore DRC in magic.
+
+Check out the following links which can be useful in learning more about Design-Rule-Checks in Magic:-
+  1. [opencircuitdesign.com/magic/](opencircuitdesign.com/magic/) - You would be interested to go to the *Technology Files* section and open the *Magic Technology File Manual*. Look into tutorial 2 and 6 specifically.
+  2. [The Skywater Build Docs](https://skywater-pdk.readthedocs.io/en/main/) - Look into the *Design Rules* specifically.
+
+In a terminal tab, open your home directory. There type out the commands as shown below:-
+
+![Screenshot 2025-01-04 180049](https://github.com/user-attachments/assets/4d0adc04-aaa2-41dc-8ae4-e83dafc07431)
+
+You can do *vi .magicrc* to look into the startup file for magic. Our experiment here is self contained so we have the tech file mentioned as well. However it is not a recommended practice. You will now get access to the magic files of a bunch of masks and layers as shown above. Type *magic -d XR* to open the layout and console window of magic. We will go ahead and open the met3.mag file in the layout window.
+
+In this file we can tinker around and explore various things as shown below:-
+
+![Screenshot 2025-01-04 182440](https://github.com/user-attachments/assets/7d5a88d6-1351-434c-ab6d-ae26f20284ea)
+
+You can see the reasons for violations on screen by pressing *:drc why*, you can select areas and apply textures from the right. I have applied the pattern shown in the bottom left using *:cif see VIA2*.
+
+![Screenshot 2025-01-04 182957](https://github.com/user-attachments/assets/806772e7-e756-44e7-827a-7b6184798345)
+
+Our tech file has commands to tell magic how to draw contact cuts inside the contact area. We will now go ahead and do a small exercise where we fix errors in a file.
+
+![Screenshot 2025-01-04 183257](https://github.com/user-attachments/assets/a3739668-2032-4225-8781-d0472aa7c548)
+
+E.g. As you can see, poly.9 is incorrect. You can find out the design specifications on the website given in link 2 as shown below. The required rule distance is 0.48 microns. Go ahead and fix this violation.
+
+![Screenshot 2025-01-04 183844](https://github.com/user-attachments/assets/e9194b0c-1f81-4765-baaf-d845fdde746a)
+
+I shall fix a violation in met1.mag file as a part of my exercise. As can be seen, m1.6 is violating a drc. On checking the website I learnt the area of this metal should be atleast 0.083 microns squared.
+
+![Screenshot 2025-01-04 185217](https://github.com/user-attachments/assets/0354d3de-e562-4c40-a037-7f2b4600d306)
+
+I now fix this DRC by increasing the area to 0.888 microns bringing the DRC violations down from 12 to 10.
+
+![Screenshot 2025-01-04 185714](https://github.com/user-attachments/assets/1602cf9e-27c9-42eb-8455-2cac824679f1)

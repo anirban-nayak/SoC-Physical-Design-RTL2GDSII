@@ -317,3 +317,17 @@ Now we will go ahead and enter interactive mode. Follow the steps exactly as sho
 ![Screenshot 2025-01-06 223019](https://github.com/user-attachments/assets/ce8d3c5c-9537-4cb1-989b-5d0daa3dc2d0)
 ![Screenshot 2025-01-06 223817](https://github.com/user-attachments/assets/78a37dfe-d254-43f4-9656-a9f1d077c3bd)
 
+At the end you can see two values mentioned. These are the total negative slack and worst slack being reported by OpenSTA tool. These are NOT favourable so we will go ahead and fix it. Head over to *configurations* in the *openlane* folder and open the *README.md* file. You will be able to see the parameters below that can be tweaked as per our requirements for synthesis.
+
+![Screenshot 2025-01-07 000319](https://github.com/user-attachments/assets/f922d633-3282-4536-9a71-3af8f9ba47a9)
+
+We will try making a more timing optimized design employing our custom inverter at the cost of a bit more area by making the following changes:-
+
+![Screenshot 2025-01-07 001646](https://github.com/user-attachments/assets/8129113c-0714-4663-ab6d-cce126658d05)
+
+Now when we re-run synthesis:- 
+
+![Screenshot 2025-01-07 003037](https://github.com/user-attachments/assets/f7edc816-ac76-4e5e-aee9-813bf2645191)
+
+VOILA! Negative slack is removed.
+

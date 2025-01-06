@@ -275,3 +275,20 @@ I shall fix a violation in met1.mag file as a part of my exercise. As can be see
 I now fix this DRC by increasing the area to 0.888 microns bringing the DRC violations down from 12 to 10.
 
 ![Screenshot 2025-01-04 185714](https://github.com/user-attachments/assets/1602cf9e-27c9-42eb-8455-2cac824679f1)
+
+Now, for place and route we don't really need all the detailed information inside a standard cell. Very basic information about the cells boundaries, power and ground rails etc. suffices and this is available in a LEF file. We will now extract the LEF file for the inverter and plug it into the picoRV32 design.
+
+There are some pre-requisites to creating a LEF file. Make sure you have these specifications met, before you proceed:-
+  1. The ports in your standard cell should be at the intersection of horizantal and vertical grid lines.
+  2. Width of the standard cell should be an odd multiple of the horizantal pitch.
+  3. Height of the standard cell should be an odd multiple of the vertical pitch.
+  4. The ports of your standard cell need to be properly specified as they will translate to pins on the LEF file.
+
+Information regarding the pitch can be found in the *sky130_fd_sc_hd* file located deep in the pdks directory in a file called *tracks.info*.
+
+We will save our inverter in the *vsdstdcelldesign* folder with a personalized name *sky130_anirbaninv.mag* using the console window . It is this file that will give us the LEF. Open this mag file, head over to the console window and just type *lef write*. Return to the terminal and check your directory. The lef file would have been created with the same name. On opening it will look something like this:-
+
+![Screenshot 2025-01-06 002423](https://github.com/user-attachments/assets/a0ed86d5-e2a3-4736-a9fd-ec45d5a1db9d)
+
+
+

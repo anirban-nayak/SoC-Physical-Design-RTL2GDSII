@@ -290,5 +290,30 @@ We will save our inverter in the *vsdstdcelldesign* folder with a personalized n
 
 ![Screenshot 2025-01-06 002423](https://github.com/user-attachments/assets/a0ed86d5-e2a3-4736-a9fd-ec45d5a1db9d)
 
+Follow the steps shown below to include the custom lef file in the source folder of your design directory:-
 
+![Screenshot 2025-01-06 224344](https://github.com/user-attachments/assets/8a3090f5-f61d-46cb-9b45-a0cbee04d523)
+
+You can open and see the contents of some library files as shown below:-
+
+![Screenshot 2025-01-06 213809](https://github.com/user-attachments/assets/c6ddf22c-ab33-41cb-a1a7-6c77d9a771ff)
+
+You need to copy these library files into your design source directory as well as shown earlier. You will be able to see all the copied files when you check at different stages as shown below.
+
+![Screenshot 2025-01-06 225043](https://github.com/user-attachments/assets/351a0e32-a0c3-4332-ad9f-d370aedd46f0)
+
+Go ahead and do a *vim config.tcl*. This is what should be visible:-
+
+![Screenshot 2025-01-06 214317](https://github.com/user-attachments/assets/0c0e1109-ff0d-4cc4-b283-aae7784eb784)
+
+Alter it to this:-
+
+![Screenshot 2025-01-06 222440](https://github.com/user-attachments/assets/f11b75b9-bf7a-45ef-a84d-89ff064aac82)
+
+Now we will go ahead and enter interactive mode. Follow the steps exactly as shown below:-
+
+![Screenshot 2025-01-06 222339](https://github.com/user-attachments/assets/01afb7f1-dcee-4b9a-a00b-eaa4bd1bbf58)
+![Screenshot 2025-01-06 222416](https://github.com/user-attachments/assets/8925b6b7-e1a8-4b52-9835-c0bd69d6ba67)
+![Screenshot 2025-01-06 223019](https://github.com/user-attachments/assets/ce8d3c5c-9537-4cb1-989b-5d0daa3dc2d0)
+![Screenshot 2025-01-06 223817](https://github.com/user-attachments/assets/78a37dfe-d254-43f4-9656-a9f1d077c3bd)
 

@@ -354,7 +354,7 @@ Setup time *(Tsetup)* is the minimum time before the active clock edge during wh
 
 Slew refers to the rate at which a signal transitions and affects timing margins by influencing *Tsetup* and *Thold*. Other critical factors include *clock skew*, *clock jitter*, and *cell/wire delays*, which must be considered in propagation delay calculations to ensure robust timing analysis. Violations of either setup or hold timing constraints lead to timing violations, potentially impacting circuit functionality and reliability. Lastly you might also want to look into Delay Tables. These tables are made to deal with the varying transistions in cells of different sizes and natures. They are based on two important principles of having each node driving the same load at every level and having identical cell at same level. They are created for every cell.
 
-We will now set up two files which are required for STA. The first file is the *my_base.sdc* file that you need to create in the src folder of your design directory. The contents of it are shown below:-
+We will now set up two files which are required for STA. The tool we use for STA in open-source physical design is *OpenSTA*. The first file is the *my_base.sdc* file that you need to create in the src folder of your design directory. The contents of it are shown below:-
 
 ![Screenshot 2025-01-07 160039](https://github.com/user-attachments/assets/fe4a9e4b-4ebb-4d75-88eb-4500d82a7e1a)
 
@@ -399,4 +399,11 @@ Another key challenge in CTS is managing glitches, which can arise from timing m
 These are the parameters used in CTS:-
 
 ![Screenshot 2025-01-07 172553](https://github.com/user-attachments/assets/1b5eb93d-7015-4806-b83e-4a20da411094)
+
+Go ahead and do *run_cts* and you'll see *TritonCTS* run:-
+
+![Screenshot 2025-01-07 173136](https://github.com/user-attachments/assets/99d4fb3c-07b2-4ce3-81cb-032521746586)
+![Screenshot 2025-01-07 173315](https://github.com/user-attachments/assets/62c87b5b-c66f-4428-bd0b-857e611b8ae4)
+
+You can see above how a new netlist gets added as well post CTS.
 

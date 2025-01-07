@@ -367,4 +367,20 @@ Once you've created and saved both the files, we will perform STA on it as shown
 ![Screenshot 2025-01-07 160829](https://github.com/user-attachments/assets/e14808dc-d823-408a-a76e-081efd4156ea)
 ![Screenshot 2025-01-07 160847](https://github.com/user-attachments/assets/79a00d44-5325-4753-a64e-f5d65086598b)
 
+We will now set the max fanout to 4 and run synthesis again as shown below:-
 
+![Screenshot 2025-01-07 161724](https://github.com/user-attachments/assets/7308c2ea-6da4-4b1f-9bac-86949562bc0f)
+![Screenshot 2025-01-07 163436](https://github.com/user-attachments/assets/911303ca-ffba-413c-aa2a-c484559a9b13)
+
+When the synthesis concludes and you run sta again you will see these new values:-
+
+![Screenshot 2025-01-07 163207](https://github.com/user-attachments/assets/bf933902-0f37-409c-b39e-65d2f0e38489)
+
+We will now try to reduce the violations by replacing cells:-
+
+![Screenshot 2025-01-07 164506](https://github.com/user-attachments/assets/dfcdafc9-ec3a-434b-9135-d284abe5ac12)
+![Screenshot 2025-01-07 164520](https://github.com/user-attachments/assets/2487585b-f2ab-4043-9e77-5382076233d0)
+![Screenshot 2025-01-07 164657](https://github.com/user-attachments/assets/1f7aa8e7-22e2-4c5b-9389-4dd389289b01)
+![Screenshot 2025-01-07 164709](https://github.com/user-attachments/assets/98ce8148-14a9-4118-add5-1c2b3217f90f)
+
+Slack has been reduced to -1.7987 which is great. But we are still in violation. We will fix this after CTS when we replace ideal clock with actual one.

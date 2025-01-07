@@ -383,4 +383,20 @@ We will now try to reduce the violations by replacing cells:-
 ![Screenshot 2025-01-07 164657](https://github.com/user-attachments/assets/1f7aa8e7-22e2-4c5b-9389-4dd389289b01)
 ![Screenshot 2025-01-07 164709](https://github.com/user-attachments/assets/98ce8148-14a9-4118-add5-1c2b3217f90f)
 
-Slack has been reduced to -1.7987 which is great. But we are still in violation. We will fix this after CTS when we replace ideal clock with actual one.
+Slack has been reduced to -1.7987 which is great. But we are still in violation. We will fix this after CTS when we replace ideal clock with actual one. Update the verilog file with these new settings that we want for minimal slack. As you can see below, the latest timestamp indicates the netlist has been updated with our prefered settings.
+
+![Screenshot 2025-01-07 171805](https://github.com/user-attachments/assets/b481b583-df23-4843-8f9d-e4c285a90deb)
+![Screenshot 2025-01-07 171826](https://github.com/user-attachments/assets/dbe59bd7-0b49-4e67-bbed-b1b4414be353)
+
+Now run the floorplan and placement again. Once you have done that, we are ready to begin CTS.
+
+Clock Tree Synthesis (CTS) is a crucial step in digital circuit design, ensuring the clock signal is distributed efficiently and uniformly across a chip. The primary goal is to minimize clock skew and delay, delivering the clock signal to all sequential elements with consistent timing. One popular approach to achieve this is using an H-Tree structure, which distributes the clock symmetrically by splitting the signal at each level. This symmetry helps ensure equal path lengths to all endpoints, naturally reducing skew. To further enhance balance in the clock network, the Midpoint Strategy is often employed. This involves selecting midpoints for buffer insertion to evenly distribute delays and maintain consistent timing across the chip.
+
+Repeaters, also known as buffers, play a vital role in maintaining the integrity of the clock signal as it traverses long distances. By amplifying the signal and sharpening transitions, repeaters counteract the natural degradation that occurs in the clock net. However, the dense and intricate nature of modern chip layouts makes cross-talk a significant challenge. To address this, clock net shielding is employed, placing grounded or low-noise lines alongside the clock signal to prevent electromagnetic interference. This shielding is essential in preserving signal quality and ensuring that noise from adjacent nets does not distort the clock signal.
+
+Another key challenge in CTS is managing glitches, which can arise from timing mismatches, cross-talk, or parasitic effects. Glitches disrupt circuit operation and can lead to serious timing errors. Effective CTS design mitigates these risks by optimizing buffer placement, balancing wire lengths, and applying robust shielding techniques. 
+
+These are the parameters used in CTS:-
+
+![Screenshot 2025-01-07 172553](https://github.com/user-attachments/assets/1b5eb93d-7015-4806-b83e-4a20da411094)
+

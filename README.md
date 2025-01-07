@@ -405,5 +405,22 @@ Go ahead and do *run_cts* and you'll see *TritonCTS* run:-
 ![Screenshot 2025-01-07 173136](https://github.com/user-attachments/assets/99d4fb3c-07b2-4ce3-81cb-032521746586)
 ![Screenshot 2025-01-07 173315](https://github.com/user-attachments/assets/62c87b5b-c66f-4428-bd0b-857e611b8ae4)
 
-You can see above how a new netlist gets added as well post CTS.
+You can see above how a new netlist gets added as well post CTS. We will now perform post-CTS analysis inside OpenROAD:-
+
+![Screenshot 2025-01-07 180233](https://github.com/user-attachments/assets/dc164774-1eb4-409b-9cc8-1122a3a4e913)
+
+Follow the commands exactly as shown above starting with the *openroad* command. When you get the report you will see the *Hold Slack* and *Setup Slack* are still in violation:-
+
+![Screenshot 2025-01-07 180749](https://github.com/user-attachments/assets/041cdf0c-1b33-4501-b3e5-9ecbea1198e7)
+![Screenshot 2025-01-07 180808](https://github.com/user-attachments/assets/65dac37d-82c5-4022-bee2-f9bf23fb1258)
+
+Follow the steps below to fix this:-
+
+![Screenshot 2025-01-07 181658](https://github.com/user-attachments/assets/1751fcfc-66f4-42a6-ac0e-8d3b4ff873e2)
+
+Once the report runs you should see that now the slack constraints have been met:-
+
+![Screenshot 2025-01-07 181811](https://github.com/user-attachments/assets/426084c0-fe2b-48b1-8922-bbd75d3a802d)
+![Screenshot 2025-01-07 181836](https://github.com/user-attachments/assets/9282265e-2c05-418e-82a0-189b0c11085e)
+
 

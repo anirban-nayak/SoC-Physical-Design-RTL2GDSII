@@ -418,9 +418,15 @@ Follow the steps below to fix this:-
 
 ![Screenshot 2025-01-07 181658](https://github.com/user-attachments/assets/1751fcfc-66f4-42a6-ac0e-8d3b4ff873e2)
 
-Once the report runs you should see that now the slack constraints have been met:-
+Once the report runs you should see that now the slack constraints have been met!
 
 ![Screenshot 2025-01-07 181811](https://github.com/user-attachments/assets/426084c0-fe2b-48b1-8922-bbd75d3a802d)
 ![Screenshot 2025-01-07 181836](https://github.com/user-attachments/assets/9282265e-2c05-418e-82a0-189b0c11085e)
 
+### 5. Routing
+Routing in physical design is the process of connecting various components and pins on a chip using metal wires while adhering to design rules and optimizing for performance metrics such as delay, power, and area. A fundamental goal in routing is to find the shortest path between pins with the minimum number of bends, as this minimizes wire length and signal degradation while reducing manufacturing complexity.
+
+One of the earliest algorithms used for routing is the *Maze Routing Algorithm*, commonly referred to as *Lee's Algorithm*. It is a breadth-first search method that guarantees finding the shortest path between two points in a grid, provided such a path exists. Lee’s Algorithm works by expanding a search wave from the source, marking each grid cell with its distance from the source until the destination is reached. After the destination is found, the algorithm backtracks to construct the path. While it is effective for finding optimal paths, it has significant drawbacks in terms of time and memory efficiency. The exhaustive grid search can become computationally expensive, especially for large designs with complex constraints, making it impractical for modern large-scale routing tasks.
+
+To address these inefficiencies, alternative algorithms have been developed. The *Line Search Algorithm* improves efficiency by focusing on line-based explorations rather than expanding uniformly across a grid, which reduces the search space. Similarly, the *Steiner Tree Algorithm* constructs a minimal interconnection tree by introducing additional nodes, known as Steiner points, to reduce the total wire length. These methods are not only faster but also better suited for complex routing scenarios, where performance and resource constraints are critical. Modern physical design tools often incorporate these advanced algorithms or hybrids of them to achieve optimal routing solutions efficiently.
 

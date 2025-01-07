@@ -430,3 +430,23 @@ One of the earliest algorithms used for routing is the *Maze Routing Algorithm*,
 
 To address these inefficiencies, alternative algorithms have been developed. The *Line Search Algorithm* improves efficiency by focusing on line-based explorations rather than expanding uniformly across a grid, which reduces the search space. Similarly, the *Steiner Tree Algorithm* constructs a minimal interconnection tree by introducing additional nodes, known as Steiner points, to reduce the total wire length. These methods are not only faster but also better suited for complex routing scenarios, where performance and resource constraints are critical. Modern physical design tools often incorporate these advanced algorithms or hybrids of them to achieve optimal routing solutions efficiently.
 
+The variables below are available to us for configuration in this last stage:-
+
+![Screenshot 2025-01-07 190548](https://github.com/user-attachments/assets/b2304b00-83e8-4ac9-bb17-43c9daaeefd0)
+
+To begin the process go ahead and follow the steps shown below:-
+
+![Screenshot 2025-01-07 185721](https://github.com/user-attachments/assets/a9f52f4b-0e43-496a-b9e5-ce6d02b2dfc8)
+![Screenshot 2025-01-07 190747](https://github.com/user-attachments/assets/fcd69682-bff8-4c97-b74b-cbb8b3654eeb)
+
+The routing can take a while. In the meantime, you can look into TritonRoute and how it handles the incredibly complex routing process. Once your routing concludes successfuly have a look at the last optimization iteration. It will tell you if there are any pending violations to be fixed. Those you'd have to do manually followed by SPEC extraction. Luckily for me the process has concluded with 0 violations as shown below:-
+
+![Screenshot 2025-01-07 202342](https://github.com/user-attachments/assets/227d54bc-b868-4168-a250-2e0fd19b14f1)
+
+Let's go have a look at our finished product!
+
+![Screenshot 2025-01-07 204338](https://github.com/user-attachments/assets/445804cc-dd61-4e85-b9ad-fd108de93a36)
+![Screenshot 2025-01-07 204430](https://github.com/user-attachments/assets/12cfb786-f234-4415-97ab-f6b6d2b5909c)
+![Screenshot 2025-01-07 203811](https://github.com/user-attachments/assets/7b0428c3-e06b-4600-a31d-b7694f0f0bd3)
+
+

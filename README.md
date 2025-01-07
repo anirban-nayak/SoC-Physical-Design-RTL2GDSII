@@ -329,5 +329,42 @@ Now when we re-run synthesis:-
 
 ![Screenshot 2025-01-07 003037](https://github.com/user-attachments/assets/f7edc816-ac76-4e5e-aee9-813bf2645191)
 
-VOILA! Negative slack is removed.
+VOILA! Negative slack is removed. Now we go ahead and run the floorplan:-
+
+![Screenshot 2025-01-07 004806](https://github.com/user-attachments/assets/a3aadb61-66d8-4cb8-b3fd-1ca7057f24c6)
+
+And then we run the placement. Open the newly generated .mag layout file for placement in Magic and this is what you'll see:-
+
+![Screenshot 2025-01-07 005729](https://github.com/user-attachments/assets/3ce3206b-7d3d-4d5f-8832-06b087c8d064)
+
+Let us now go and find our custom inverter:-
+
+![Screenshot 2025-01-07 024552](https://github.com/user-attachments/assets/9eeaad9a-3036-4001-83a0-c022a69df637)
+
+When you find the needle in the haystack, it should look something like this. Congratulations, your custom inverter is now actually in the layout!
+
+### 4. Clock Tree Synthesis
+Before we delve deep into this section, there are some basic Static Timing Analysis terminology you should be familiar with. 
+Setup time *(Tsetup)* is the minimum time before the active clock edge during which the data signal must be stable to ensure proper capture by the flip-flop. Hold time *(Thold)*, on the other hand, is the minimum time after the clock edge during which the data signal must remain stable. These constraints ensure correct data transfer between the launch and capture flip-flops. The data arrival time *(Tarrival)* represents when the data reaches the capture flop, while the data required time *(Trequired)* defines when the data must be valid to avoid timing violations. Setup and hold checks are performed to validate these conditions:-
+
+  1. Setup Check: *Tarrival < Trequired* where *Tarrival = TclktoQ + Tpropagation + Tdatapathdelay* and *Trequired = Tclkperiod - Tsetup*
+  2. Setup Slack: *Ssetup = Trequired - Tarrival*
+  3. Hold Check: *Tarrival > Trequired* where *Tarrival = TclktoQ + Tpropagataion + Tdatapathdelay* and *Trequired = Thold*
+  4. Hold Slack: *Shold = Tarrival - Trequired*
+
+Slew refers to the rate at which a signal transitions and affects timing margins by influencing *Tsetup* and *Thold*. Other critical factors include *clock skew*, *clock jitter*, and *cell/wire delays*, which must be considered in propagation delay calculations to ensure robust timing analysis. Violations of either setup or hold timing constraints lead to timing violations, potentially impacting circuit functionality and reliability. Lastly you might also want to look into Delay Tables. These tables are made to deal with the varying transistions in cells of different sizes and natures. They are based on two important principles of having each node driving the same load at every level and having identical cell at same level. They are created for every cell.
+
+We will now set up two files which are required for STA. The first file is the *my_base.sdc* file that you need to create in the src folder of your design directory. The contents of it are shown below:-
+
+![Screenshot 2025-01-07 160039](https://github.com/user-attachments/assets/fe4a9e4b-4ebb-4d75-88eb-4500d82a7e1a)
+
+The second file is the pre_sta.conf file that you need to create and configure in the openlane folder as shown below:-
+
+![Screenshot 2025-01-07 160539](https://github.com/user-attachments/assets/70bb858f-be8c-467d-a79a-0e8418e5c902)
+
+Once you've created and saved both the files, we will perform STA on it as shown below:-
+
+![Screenshot 2025-01-07 160829](https://github.com/user-attachments/assets/e14808dc-d823-408a-a76e-081efd4156ea)
+![Screenshot 2025-01-07 160847](https://github.com/user-attachments/assets/79a00d44-5325-4753-a64e-f5d65086598b)
+
 

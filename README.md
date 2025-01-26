@@ -450,5 +450,6 @@ Let's go have a look at our finished product!
 ![Screenshot 2025-01-07 203811](https://github.com/user-attachments/assets/7b0428c3-e06b-4600-a31d-b7694f0f0bd3)
 
 ## Certificate
+![17_VSD_nasscom Workshop Certificate 2025GitHub Repo (1)-1](https://github.com/user-attachments/assets/c0c3e535-f21c-492e-86b6-cbef170fe0f4)
 ## Acknowledgements
 

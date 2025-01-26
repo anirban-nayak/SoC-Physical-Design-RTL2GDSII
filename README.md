@@ -452,4 +452,6 @@ Let's go have a look at our finished product!
 ## Certificate
 ![17_VSD_nasscom Workshop Certificate 2025GitHub Repo (1)-1](https://github.com/user-attachments/assets/c0c3e535-f21c-492e-86b6-cbef170fe0f4)
 ## Acknowledgements
-
+* [Kunal Ghosh](https://github.com/kunalg123), Co-founder, VSD Corp. Pvt. Ltd.
+* [Nickson P Jose](https://github.com/nickson-jose), Physical Design Engineer, Intel Corporation.
+* [R. Timothy Edwards](https://github.com/RTimothyEdwards), Senior Vice President of Analog and Design, efabless Corporation.
